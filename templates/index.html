@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Tax Calculator</title>
+</head>
+<body>
+    <h2>Indian Income Tax Calculator</h2>
+    <form method="post">
+        <label for="income">Total Income (₹):</label>
+        <input type="number" name="income" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" name="age" required><br><br>
+        
+        <label for="regime">Tax Regime:</label>
+        <select name="regime" required>
+            <option value="old">Old Regime</option>
+            <option value="new">New Regime</option>
+        </select><br><br>
+        
+        <label for="salaried">Are you a salaried individual?</label>
+        <select name="salaried" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+        
+        <label for="deductions">Total Deductions (₹) [Old Regime]:</label>
+        <input type="number" name="deductions" value="0"><br><br>
+        
+        <input type="submit" value="Calculate Tax">
+    </form>
+    
+    {% if tax is not none %}
+        <h3>Calculated Tax: ₹{{ tax }}</h3>
+    {% endif %}
+</body>
+</html>
